@@ -166,24 +166,12 @@ Use the game function below to do the following:
   HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
 */
 
-let computer = Math.ceil(Math.random() * 3);
-
 function game(user, computer){
-  if(user == "scissors"){
-    used = 1;
-  }else if(user == "paper"){
-    used = 2;
-  }else if(user == "rock"){
-    used = 3;
-  }else{
-    return "invalid input";
-  }
-
-  if(used == computer){
+  if(user == computer){
     return "it's a tie";
-  }else if(used == computer + 1 || used == 3 && computer == 1){
+  }else if(user == "paper" && computer == "rock" || user == "scissors" && computer == "paper" || user == "rock" && computer == "scissors"){
     return "you win!";
-  }else if(used == computer - 1 || used == 1 && computer == 3){
+  }else if(user == "scissors" && computer == "rock" || user == "rock" && computer == "paper" || user == "paper" && computer == "scissors"){
     return "you lose!";
   }else{
     return "error";
@@ -204,7 +192,7 @@ Using the miles function below do the following:
 */
 
 function miles(km){
-  return km * 0.62137119;
+  return km * 0.621371;
 }
 
 
@@ -218,7 +206,7 @@ Using the feet function below do the following:
 */
 
 function feet(cm){
-  return cm * 30.48;
+  return cm / 30.48;
 }
  
 
@@ -234,7 +222,7 @@ Using the annoyingSong function below do the following:
 */
 
 function annoyingSong(num){
-  for(let i = num; i < 1; i--){
+  for(let i = num; i >= 1; i--){
     return `${num} bottles of soda on the wall, ${num} bottles of soda, take one down pass it around ${num - 1} bottles of soda on the wall`;
   }
 }
@@ -257,15 +245,15 @@ Using the grade function below do the following:
   
 function grade(score){
   if(score < 60){
-    return "F";
+    return "you got a F";
   }else if(score < 70){
-    return "D";
+    return "you got a D";
   }else if(score < 80){
-    return "C";
+    return "you got a C";
   }else if(score < 90){
-    return "B";
+    return "you got a B";
   }else if(score <= 100){
-    return "A";
+    return "you got a A";
   }else{
     return "invalid input";
   }
